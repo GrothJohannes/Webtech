@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class TodoController {
+public class ToDoController {
 
     @GetMapping("/todos")
     public List<ToDo> testRoute() {
