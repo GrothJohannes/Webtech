@@ -1,19 +1,16 @@
 package de.htwberlin.webtech.ToDoList;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Arrays;
 
 @RestController
+@RequestMapping("/api/todos")
 public class ToDoController {
 
-    @GetMapping("/todos")
-    public List<ToDo> testRoute() {
-        return List.of(
-                new ToDo("Test Todo 1", "This is a test todo item 1."),
-                new ToDo("Test Todo 2", "This is a test todo item 2."),
-                new ToDo("Test Todo 3", "This is a test todo item 3.")
-        );
+    @GetMapping
+    public List<String> getTodos() {
+        return Arrays.asList("Einkaufen", "Hausaufgaben", "Frontend verbinden");
     }
 }
